@@ -11,6 +11,10 @@ terraform {
 
 provider "aws" {
   region  = "us-east-1"
+  assume_role_with_web_identity {
+    role_arn = arn:aws:iam::328608405228:oidc-provider/lerkin.app.spacelift.io 
+    web_identity_token_file = "/mnt/workspace/spacelift.oidc"
+  }
 }
 
 
